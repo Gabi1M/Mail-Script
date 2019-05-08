@@ -1,0 +1,9 @@
+#!/bin/bash
+input1="/home/gabriel/SO/adressFile"
+input2=$(<"/home/gabriel/SO/messageFile")
+while IFS= read -r var1
+do
+  echo "$var1"
+  echo "$input2" | mail "$var1"
+  echo "Sent mail"
+done < "$input1"
